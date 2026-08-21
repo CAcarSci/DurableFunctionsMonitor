@@ -241,7 +241,7 @@
       "apiVersion": "2022-09-01",
       "dependsOn": [
         "[resourceId('Microsoft.Web/sites', parameters('functionAppName'))]",
-        "[resourceId('Microsoft.Authorization/roleAssignments', variables('onedeployRoleAssignmentName'))]"
+        "[extensionResourceId(resourceId('Microsoft.Storage/storageAccounts', variables('deploymentStorageAccountName')), 'Microsoft.Authorization/roleAssignments', variables('onedeployRoleAssignmentName'))]"
       ],
       "properties": {
         "packageUri": "[parameters('applicationPackageUrl')]",
